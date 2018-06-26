@@ -1,0 +1,26 @@
+version: "3"
+services:
+  app:
+    build: .
+    depends_on:
+      - db
+    links:
+      - db
+    ports:
+      - "5000:5000"
+    environment:
+      TAX_CODES_DB_HOST: db
+      TAX_CODES_DB_PORT: 3306
+      TAX_CODES_DB_USER: user_tax
+      TAX_CODES_DB_PASS: unclesam
+      TAX_CODES_DB_NAME: tax_rates
+  db:
+    image: mariadb:latest
+    container_name: mariadb
+    volumes:
+      - ./data/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: tax_rates
+    ports:
+      - "32000:3306"
