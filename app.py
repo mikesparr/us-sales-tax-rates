@@ -8,7 +8,7 @@ import pymysql
 conf = {
     'db_host': 'localhost',
     'db_port': 3306,
-    'db_name': 'tax_codes',
+    'db_name': 'tax_rates',
     'db_user': 'user_tax',
     'db_pass': 'unclesam'
 }
@@ -18,11 +18,11 @@ app = flask.Flask(__name__)
 # override configs with env vars if available
 try:
     env_conf = {
-        'db_host': os.environ['TAX_CODES_DB_HOST'],
-        'db_port': int(os.environ['TAX_CODES_DB_PORT']),
-        'db_name': os.environ['TAX_CODES_DB_NAME'],
-        'db_user': os.environ['TAX_CODES_DB_USER'],
-        'db_pass': os.environ['TAX_CODES_DB_PASS']
+        'db_host': os.environ['TAX_RATES_DB_HOST'],
+        'db_port': int(os.environ['TAX_RATES_DB_PORT']),
+        'db_name': os.environ['TAX_RATES_DB_NAME'],
+        'db_user': os.environ['TAX_RATES_DB_USER'],
+        'db_pass': os.environ['TAX_RATES_DB_PASS']
     }
     conf.update(env_conf)
 except KeyError:
@@ -66,7 +66,7 @@ def rate(zipcode):
         }
 
         conn.close()
-        
+
         return flask.jsonify( {'error': None, 'rate': rate} )
 
     except Exception as err:

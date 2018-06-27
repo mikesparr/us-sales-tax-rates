@@ -9,11 +9,11 @@ services:
     ports:
       - "5000:5000"
     environment:
-      TAX_CODES_DB_HOST: db
-      TAX_CODES_DB_PORT: 3306
-      TAX_CODES_DB_USER: user_tax
-      TAX_CODES_DB_PASS: unclesam
-      TAX_CODES_DB_NAME: tax_rates
+      TAX_RATES_DB_HOST: db
+      TAX_RATES_DB_PORT: 3306
+      TAX_RATES_DB_USER: user_tax
+      TAX_RATES_DB_PASS: unclesam
+      TAX_RATES_DB_NAME: tax_rates
   db:
     image: mariadb:latest
     container_name: mariadb

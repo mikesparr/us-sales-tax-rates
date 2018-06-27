@@ -22,7 +22,7 @@ echo "===> User"
 id
 
 echo "===> Waiting for database ..."
-/bin/sh ./wait-for "${TAX_CODES_DB_HOST}:${TAX_CODES_DB_PORT}"
+/bin/sh ./wait-for "${TAX_RATES_DB_HOST}:${TAX_RATES_DB_PORT}"
 
 echo "===> Pausing for users to be created ..."
 sleep 5

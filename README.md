@@ -1,4 +1,4 @@
-# US Tax Codes
+# US Sales Tax Rates
 This is a simple script that loads a directory of CSV files into a MySQL database
 
 # Requirements
@@ -8,18 +8,18 @@ This is a simple script that loads a directory of CSV files into a MySQL databas
 # Setup (env variables)
 ```bash
 # environment variables passed into app
-export TAX_CODES_DB_HOST=localhost
-export TAX_CODES_DB_PORT=3306
-export TAX_CODES_DB_NAME=tax_rates
-export TAX_CODES_DB_USER=user_tax
-export TAX_CODES_DB_PASS=unclesam
+export TAX_RATES_DB_HOST=localhost
+export TAX_RATES_DB_PORT=3306
+export TAX_RATES_DB_NAME=tax_rates
+export TAX_RATES_DB_USER=user_tax
+export TAX_RATES_DB_PASS=unclesam
 
 export FLASK_APP=app.py
 ```
 
 # Install (manual)
- * `git clone git@github.com:mikesparr/us-tax-codes.git`
- * `cd us-tax-codes`
+ * `git clone git@github.com:mikesparr/us-sales-tax-rates.git`
+ * `cd us-sales-tax-rates`
  * `python3 -m venv /path/to/env`
  * `source /path/to/env/bin/activate`
  * `pip install -r requirements.txt`
@@ -60,3 +60,7 @@ Returns:
   }
 }
 ```
+
+# Database Access
+`mysql --host=127.0.0.1 --port=32000 -u root -p`
+
